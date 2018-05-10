@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>DatingApp</title>
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h2>Tell Us About Yourself!</h2>
+    <hr>
+
+    <h3><strong>Basics</strong></h3>
+    <h4>Name (Required)</h4>
+    <input type="text" id="name" class="form-control" required>
+
+    <hr>
+
+    <h3><strong>FunFact 1</strong></h3>
+    <h4>You like to leave work early</h4>
+    <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="1">
+            <label class="form-check-label" for="inlineCheckbox1">Agree</label>
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="0">
+            <label class="form-check-label" for="inlineCheckbox2">Disagree</label>
+        </div> 
+  
+
+    <h3><strong>FunFact 2</strong></h3>
+    <h4>You are a loyal Braves Fan</h4>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="1">
+          <label class="form-check-label" for="inlineCheckbox3">Agree</label>
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="0">
+          <label class="form-check-label" for="inlineCheckbox4">Disagree</label>
+      </div>
+
+
+    <h3><strong>FunFact 3</strong></h3>
+    <h4>Your favorite Restaurant is Schlotzsky's</h4>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="1">
+          <label class="form-check-label" for="inlineCheckbox5">Agree</label>
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="0">
+          <label class="form-check-label" for="inlineCheckbox6">Disagree</label>
+      </div>
+
+
+    <h3><strong>FunFact 4</strong></h3>
+    <h4>Franchise Sales is the bane of your existance</h4>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="1">
+          <label class="form-check-label" for="inlineCheckbox7">Agree</label>
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="0">
+          <label class="form-check-label" for="inlineCheckbox8">Disagree</label>
+      </div>
+
+
+    <h3><strong>FunFact 5</strong></h3>
+    <h4>You feel that IT should be allowed to drink at work</h4>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="1">
+          <label class="form-check-label" for="inlineCheckbox9">Agree</label>
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="0">
+          <label class="form-check-label" for="inlineCheckbox10">Disagree</label>
+      </div>
+
+
+    <h3><strong>FunFact 6</strong></h3>
+    <h4>The texture of cottage cheese makes you smile</h4>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox11" value="1">
+          <label class="form-check-label" for="inlineCheckbox11">Agree</label>
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox12" value="0">
+          <label class="form-check-label" for="inlineCheckbox12">Disagree</label>
+      </div>
+
+    <br>
+    <br>
+
+ 
+    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
+     Submit</button>
+
+     <footer class="footer">
+        <div class="container">
+          <p><a href="/api/matches">MATCH DATABASE</a></p>
+        </div>
+      </footer>
+  
+  </div>
+
+  <!-- POPUP MATCH -->
+  <div id="results-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- POPUP MATCH-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title"><strong>Top Match</strong></h2>
+        </div>
+        <div class="modal-body">
+          <h2 id="match-name"></h2>
+          <img id="match-img" src="https://lumiere-a.akamaihd.net/v1/images/tmb-sq_character-chewbacca_launch_42e8f1d8.jpeg?width=600" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">EJECT BUTTON</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var config = {
+      ".chosen-select": {},
+      ".chosen-select-deselect": {
+        allow_single_deselect: true
+      },
+      ".chosen-select-no-single": {
+        disable_search_threshold: 10
+      },
+      ".chosen-select-no-results": {
+        no_results_text: "You will be alone forever!"
+      },
+      ".chosen-select-width": {
+        width: "95%"
+      }
+    };
+
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+
+    $("#submit").on("click", function(event) {
+      event.preventDefault();
+
+
+      function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function() {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+
+        $(".chosen-select").each(function() {
+
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+        return isValid;
+      }
+
+      if (validateForm()) {
+        var userData = {
+          name: $("#name").val(),
+          scores: [
+            $("#q1").val(),
+            $("#inlineCheckbox2").val(),
+            $("#inlineCheckbox3").val(),
+            $("#inlineCheckbox4").val(),
+            $("#inlineCheckbox5").val(),
+            $("#inlineCheckbox6").val(),
+            $("#inlineCheckbox7").val(),
+            $("#inlineCheckbox8").val(),
+            $("#inlineCheckbox9").val(),
+            $("#inlineCheckbox10").val(),
+            $("#inlineCheckbox11").val(),
+            
+          ]
+        };
+        $.post("/api/matches", userData, function(data) {
+          $("#match-name").text(data.name);
+          $("#match-img").attr("src", data.photo);
+          $("#results-modal").modal("toggle");
+
+        });
+      } else {
+        alert("**Answer Every Questions**");
+      }
+    });
+  </script>
+
+</body>
+
+</html>

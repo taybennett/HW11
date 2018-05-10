@@ -1,0 +1,20 @@
+{
+  "name": "hw11",
+  "version": "1.0.0",
+  "description": "MatchMaker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Taylor Bennett",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "path": "^0.12.7"
+  },
+  "engines": {
+    "node": "5.3.0"
+  }
+}
